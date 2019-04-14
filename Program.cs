@@ -4,35 +4,41 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp4
+namespace Longest_Word
 {
     class Program
     {
-        string[] Letters = new string[26] { "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" };
         static void Main(string[] args)
         {
-            Program orange = new Program();
-            Console.WriteLine(orange.Gematria("universe"));
+            Program a = new Program();
+            Console.WriteLine("the longest word is :");
+            Console.WriteLine(a.MyFunctionA("Ada Lovelace wrote the first algorithm designed for processing by an Analytical Engine."));
         }
-        public int Gematria(string word)
-        {
-            int GematriaValue = 1;
-            for (int i = 0; i < word.Length; i++)
+        public MyFunctionA(string input)
+        { //WRITE A c# Program to find the longest word in a string.
+            string[] words = input.Split('');
+
+            int wordArrayLength = words.Length;
+            int[] wordsLength = new int[wordArrayLength];
+
+            foreach (var word in words)
             {
-                GematriaValue += LetterValue(word[i].ToString());
+                //TODO
             }
-            return GematriaValue;
-        }
-        public int LetterValue(string letter)
-        {
-            int x = 0;
-            while (Letters[x]!=letter)
-            {
-                if (Letters[x++].Equals(letter))
-                { return x++; }
-                
+            //loop post condition: we now have array wordsLength which 
+            //contains the lengths of each word
+
+            string currentWord = words[0];
+            string nextWord;
+
+            for (int y = 0; y {
+                currentWord = words[y];
+                nextWord = words[y + 1];
+                //TODO: use an IF statement to maker sure that variablelongestWord
+                // is always set to the longest word in the input string
             }
-            return x;
+
+
         }
     }
 }
